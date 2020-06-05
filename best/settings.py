@@ -13,7 +13,7 @@ SECRET_KEY = 'jwmtnca$68tr!8be(r)y+8l@yf5r)#j2$tj#692=3ei0rd2b5b'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [*]
+ALLOWED_HOSTS = ["localhost:8000","onemail-techvile.herokuapp.com"]
 
 
 # Application definition
