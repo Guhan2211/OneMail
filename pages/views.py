@@ -5,13 +5,17 @@ from .pay import cli
 from django.views.decorators.csrf import csrf_exempt
 from .models import Profile as p
 from .models import pay_hist as ph
+from django.contrib.auth.decorators import login_required
 
 
 def index(request):
     return render(request,'home.html')
+
+
 def about(request):
     return render(request,'about.html')
 
+@login_required(redirect_field_name='login',login_url="/")
 def profile(request):
     if(request.method=='POST'):
         mails=request.POST['count']
@@ -66,7 +70,7 @@ def profile(request):
     context={"form":form_inp,"hist":hist}
     return render(request,'profile.html',context)
 
-
+@login_required(redirect_field_name='login',login_url="/")
 def payment_status(request):
     response=request.POST
     #print(response)

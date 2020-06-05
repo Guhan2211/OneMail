@@ -4,6 +4,12 @@ from .mail import m_wtout_attach as mwa
 from django.contrib.auth.models import User
 from django import forms
 from .models import email_model as em
+from django.contrib.auth.decorators import login_required
+
+
+
+
+@login_required(redirect_field_name='login',login_url="/")
 def create(request):
     if request.method=="POST":
        
