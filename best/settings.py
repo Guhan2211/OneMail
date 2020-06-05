@@ -172,4 +172,4 @@ TINYMCE_DEFAULT_CONFIG = {
     'statusbar': True,
     }
 
-TINYMCE_JS_URL = '//cdn.tinymce.com/4/tinymce.min.js'
+TINYMCE_JS_URL = 'https://cdn.tinymce.com/4/tinymce.min.js'
