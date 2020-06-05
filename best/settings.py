@@ -115,17 +115,19 @@ USE_L10N = True
 USE_TZ = True
 
 
-STATIC_ROOT=os.path.join(BASE_DIR,'static')
+#STATIC_ROOT=os.path.join(BASE_DIR,"static")
 STATIC_URL = '/static/'
-# STATICFILES_DIRS=[
-#      os.path.join(BASE_DIR,'static')
-#  ]
+STATICFILES_DIRS=[
+      os.path.join(BASE_DIR,'static')
+  ]
 SITE_ID=1
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 LOGIN_REDIRECT_URL="/es"
 LOGOUT_REDIRECT_URL = '/'
 ACCOUNT_EMAIL_REQUIRED = True
 SOCIALACCOUNT_PROVIDERS = {
+
+
     'facebook':
 
     {'METHOD': 'oauth2',
