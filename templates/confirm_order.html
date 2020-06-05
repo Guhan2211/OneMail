@@ -1,0 +1,28 @@
+{% extends 'base.html' %} 
+{% load static %}
+{% block content %}
+
+
+<h1>Hy {{Name}},</h1>
+<h4>Confirm your order for {{request.user.profile.temp}} mails by paying Rs.{{Amount}}!<br/>Click the pay button!!!!!</h4>
+<form action="{% url 'payment_status' %}" method="POST"> 
+    {% csrf_token %}
+    <script
+        src="https://checkout.razorpay.com/v1/checkout.js"
+        data-key="rzp_test_nVCGLmk60BozNk" 
+        data-amount="{{Amount}}"
+        data-currency="INR"
+        data-order_id="{{order_id}}"
+        data-buttontext="Pay"
+        data-name="OneMail"
+        data-description="You are adding mail balance"
+        data-image="{% static 'img/logo_png.png' %}"
+        data-prefill.name="{{Name}}"
+        data-prefill.email="{{Email}}"
+        data-theme.color="#2010d1"
+    ></script>
+    <input type="hidden" custom="Hidden Element" name="hidden">
+    </form>
+
+
+{% endblock%}

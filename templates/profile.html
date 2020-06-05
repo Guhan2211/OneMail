@@ -1,0 +1,70 @@
+{% extends 'base.html' %} 
+{% load static %}
+
+
+{% block content %}
+<div class="container">
+    
+<h1>PROFILE</h1>
+
+<h1>Wallet Balance: {{ user.profile.wallet }}<span class="text-secondary "> mails</span> </h1>
+
+<div>
+    <form method="POST" class="form-inline"> 
+        {% csrf_token %}
+        <label for="order" class="mt-2 mr-2">Buy Emails</label>
+    {{form.as_p}}
+    <button class="btn btn-primary btn-sm  mt-2 " type="submit" value="submit">Pay</button>
+
+    </form>
+    <h3><span>Amount : </span><span id="cost">Rs.10</span></h3>
+    <p class="text-secondary small" >*You can order in 50-Mail Bundles .Each bundle cost Rs.10</p>
+
+</div>
+<hr/>
+<h1>Payment History</h1>
+<table class="table table-striped">
+
+    <thead>
+        <th>Order Id</th>
+        <th>Pay Id</th>
+        <th>Amount</th>
+        <th>Ordered Date</th>
+    </thead>
+    <tbody>
+        {% for x in hist %}
+
+        <tr>
+            <td>{{x.order_id}}</td>
+            <td>{{x.pay_id}}</td>
+            <td>{{x.amnt}}</td>
+            <td>{{x.date_ordered}}</td>
+        </tr>
+
+        {% endfor %}
+    </tbody>
+
+</table>
+
+
+
+</div>
+
+
+<script>
+    
+    
+    $("[type='number']").keypress(function (evt) {
+        evt.preventDefault();
+    });
+    $("[type='number']").change(function() {
+        var mails = $("#order").val();
+        mails=(mails/50)*10;
+        $("#cost").html("Rs."+mails);
+        
+      });
+
+</script>
+
+
+{% endblock%}

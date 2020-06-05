@@ -1,0 +1,12 @@
+{% extends 'base.html' %} 
+{% block content %}
+<h1>ABOUT</h1>
+{{user}}
+<br/>
+{{user.get_full_name}}<br/>
+{{user.email}}<br/>
+{{user.profile}}<br/>
+{{ user.profile.wallet }}
+<!-- {{user.socialaccount_set.all.0.extra_data.email}}<br/> -->
+<img src="{{ user.socialaccount_set.all.0.get_avatar_url }}" />
+{% endblock%}
