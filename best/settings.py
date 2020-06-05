@@ -13,7 +13,7 @@ SECRET_KEY = 'jwmtnca$68tr!8be(r)y+8l@yf5r)#j2$tj#692=3ei0rd2b5b'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["localhost:8000","onemail-techvile.herokuapp.com"]
+ALLOWED_HOSTS = ["localhost","onemail-techvile.herokuapp.com"]
 
 
 # Application definition
@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'allauth.socialaccount.providers.facebook',
     'allauth.socialaccount.providers.google',
+    
 ]
 
 MIDDLEWARE = [
@@ -103,10 +104,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
-# Internationalization
-# https://docs.djangoproject.com/en/3.0/topics/i18n/
-
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'Asia/Kolkata'
@@ -118,16 +115,14 @@ USE_L10N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/3.0/howto/static-files/
 STATIC_ROOT=os.path.join(BASE_DIR,'static')
 STATIC_URL = '/static/'
-STATICFILES_DIRS=[
-     os.path.join(BASE_DIR,'static')
- ]
+# STATICFILES_DIRS=[
+#      os.path.join(BASE_DIR,'static')
+#  ]
 SITE_ID=1
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-LOGIN_REDIRECT_URL="/about"
+LOGIN_REDIRECT_URL="/es"
 LOGOUT_REDIRECT_URL = '/'
 ACCOUNT_EMAIL_REQUIRED = True
 SOCIALACCOUNT_PROVIDERS = {
