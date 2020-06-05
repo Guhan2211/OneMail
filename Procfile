@@ -1,1 +1,1 @@
-web: gunicorn nutri.wsgi --log-file -
+web: gunicorn best.wsgi --log-file -
