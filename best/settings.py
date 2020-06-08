@@ -13,7 +13,7 @@ SECRET_KEY = 'jwmtnca$68tr!8be(r)y+8l@yf5r)#j2$tj#692=3ei0rd2b5b'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["localhost","onemail-techvile.herokuapp.com"]
+ALLOWED_HOSTS = ["localhost","onemail-techvile.herokuapp.com","127.0.0.1"]
 
 ACCOUNT_DEFAULT_HTTP_PROTOCOL='https'
 # Application definition
@@ -124,7 +124,7 @@ SITE_ID=2
 #STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 LOGIN_REDIRECT_URL="/es"
 LOGOUT_REDIRECT_URL = '/'
-ACCOUNT_DEFAULT_HTTP_PROTOCOL='http'
+
 ACCOUNT_EMAIL_REQUIRED = True
 SOCIALACCOUNT_PROVIDERS = {
 
