@@ -1,7 +1,7 @@
 {% extends 'base.html' %} 
 {% load static %}
 
-
+{% block title %}{{request.user.username |title}}{% endblock %}
 {% block content %}
 <div class="container">
     
@@ -54,9 +54,7 @@
 <script>
     
     
-    $("[type='number']").keypress(function (evt) {
-        evt.preventDefault();
-    });
+    
     $("[type='number']").change(function() {
         var mails = $("#order").val();
         mails=(mails/50)*10;
