@@ -53,9 +53,10 @@ class mail_sender(forms.ModelForm):
         widget=TinyMCE(attrs={
 
             "class":"form-control",
+            
             "placeholder":'Write you Body Message here!'
             },
-            mce_attrs={'width': 800})
+            mce_attrs={'width': "100%"})
         )
 
 

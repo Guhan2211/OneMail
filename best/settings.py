@@ -120,7 +120,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS=[
       os.path.join(BASE_DIR,'static')
   ]
-SITE_ID=1
+SITE_ID=2
 #STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 LOGIN_REDIRECT_URL="/es"
 LOGOUT_REDIRECT_URL = '/'
@@ -142,6 +142,7 @@ SOCIALACCOUNT_PROVIDERS = {
 TINYMCE_DEFAULT_CONFIG = {
     'height': 360,
     'width': 1120,
+    
     'cleanup_on_startup': True,
     'custom_undo_redo_levels': 20,
     'selector': 'textarea',
