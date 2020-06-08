@@ -15,7 +15,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["localhost","onemail-techvile.herokuapp.com"]
 
-
+ACCOUNT_DEFAULT_HTTP_PROTOCOL='https'
 # Application definition
 
 INSTALLED_APPS = [
@@ -124,6 +124,7 @@ SITE_ID=2
 #STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 LOGIN_REDIRECT_URL="/es"
 LOGOUT_REDIRECT_URL = '/'
+ACCOUNT_DEFAULT_HTTP_PROTOCOL='http'
 ACCOUNT_EMAIL_REQUIRED = True
 SOCIALACCOUNT_PROVIDERS = {
 
