@@ -124,8 +124,11 @@ SITE_ID=2
 #STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 LOGIN_REDIRECT_URL="/es"
 LOGOUT_REDIRECT_URL = '/'
-
+ACCOUNT_USERNAME_REQUIRED=True
 ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_UNIQUE_EMAIL=True
+ACCOUNT_LOGOUT_ON_GET=True
+
 SOCIALACCOUNT_PROVIDERS = {
 
 
@@ -140,6 +143,8 @@ SOCIALACCOUNT_PROVIDERS = {
     }
         
 }
+
+
 TINYMCE_DEFAULT_CONFIG = {
     'height': 360,
     'width': 1120,
@@ -170,5 +175,8 @@ TINYMCE_DEFAULT_CONFIG = {
     'menubar': False,
     'statusbar': True,
     }
+
+
+
 
 TINYMCE_JS_URL = 'https://cdn.tinymce.com/4/tinymce.min.js'
